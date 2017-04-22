@@ -1,14 +1,46 @@
-<html5></html5>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+  <!-- jQuery UI -->
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js" integrity="sha256-DI6NdAhhFRnO2k51mumYeDShet3I8AKCQf/tf7ARNhI=" crossorigin="anonymous"></script>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <title>The NBA App</title>
 </head>
+
 <body>
   <div id='app'></div>
+
+  <h3>Non-React Form</h3>
+    <form class='form-group col-xs-3'>
+      user:<br>
+      <input id='input_name' type="text" name="user" class="form-control"><br>
+      team:<br>
+      <input id='input_team' type="text" name="team" class="form-control">
+      <button id='submit' type='submit'>Submit</button>
+    </form>
 </body>
-<script src="./client/dist/bundle.js"></script>
+
+<!--<script src="./client/dist/bundle.js"></script>-->
+<script>
+  $(function() {
+      console.log( "ready!" );
+    $("#submit").click(function(){
+      var dataToSend = {
+        team: $('#input_team').val()
+      }
+      $.post("http://127.0.0.1:3000/teams", dataToSend, function(data, status){
+        alert("Data: " + data + "\nStatus: " + status);
+      });
+    });
+  });
+</script>
 </html>
+
