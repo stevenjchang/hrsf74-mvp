@@ -10,22 +10,31 @@
   <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
   <!-- jQuery UI -->
   <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js" integrity="sha256-DI6NdAhhFRnO2k51mumYeDShet3I8AKCQf/tf7ARNhI=" crossorigin="anonymous"></script>
-  
+  <!-- angularJS -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
   <title>The NBA App</title>
 </head>
 
 <body>
-  <div id='app'></div>
 
-  <h3>Non-React Form</h3>
-    <form class='form-group col-xs-3'>
-      user:<br>
-      <input id='input_name' type="text" name="user" class="form-control"><br>
-      team:<br>
-      <input id='input_team' type="text" name="team" class="form-control">
-      <button id='submit' type='submit'>Submit</button>
-    </form>
+  <!-- REACT   REACT   REACT -->
+  <div id='app'></div>
+  <!-- end of REACT   REACT   REACT -->
+
+  <!-- jQuery   jQuery   jQuery -->
+  <h3>The NBA App</h3>
+  <form class='form-group col-xs-3'>
+    user:<br>
+    <input id='input_name' type="text" name="user" class="form-control"><br>
+    team:<br>
+    <input id='input_team' type="text" name="team" class="form-control">
+    <button id='submit' type='submit'>Submit</button>
+  </form>
+  <!-- end of jQuery   jQuery   jQuery -->
+
+  <!-- Angular   Angular   Angular -->
+  <div id='content' ng-app='MyTutorialApp' ng-controller='MainController'>{{understand}}</div>
+  <!-- end of Angular   Angular   Angular -->
 </body>
 
 <!--<script src="./client/dist/bundle.js"></script>-->

@@ -1,25 +1,18 @@
 app.controller('MainController', function($scope, $http) {
-  $scope.videoLinks;
-  // $scope.inputValue = "heyyy";
-    $http.get("http://localhost:3000/teams")
-    .then(function(response) {
-      $scope.hello = 'qTbZU0IUrQI';
-      $scope.videoLinks = response.data;
-      // $scope.dataFromServer = response.data;
-    });
+
+    // $http.get("http://localhost:3000/teams")
+    // .then(function(response) {
+    //   $scope.hello = 'qTbZU0IUrQI';
+    //   $scope.videoLinks = response.data;
+    // });
+
+    $scope.submitTeam = function(team) {
+      $http.post("http://localhost:3000/teams1", {team: team})
+      .then(function(response) {
+        $scope.videoLinks = response.data[0].gameLinks.split(',');
+        console.log('***** $scope.videoLinks >>maincontroller.js --> ', $scope.videoLinks);
+      })
+    }
 });
-
-
-// app.controller("MainController", function($scope){
-//   $scope.selectedPerson = 0;
-//   $scope.selectedGenre = null;
-//   $scope.people = [
-//     { id: 0, name: 'Leon', music: [ 'Rock', 'Metal', 'Dubstep', 'Electro' ] },
-//     { id: 1, name: 'Chris', music: [ 'Indie', 'Drumstep', 'Dubstep', 'Electro' ] },
-//     { id: 2, name: 'Harry', music: [ 'Rock', 'Metal', 'Thrash Metal', 'Heavy Metal' ] },
-//     { id: 3, name: 'Allyce', music: [ 'Pop', 'RnB', 'Hip Hop' ] }
-//   ];
-// });
-
 
 
