@@ -10,11 +10,11 @@ exports.YouTubeID = mongoose.model('YouTubeID', YouTubeIDSchema);
 
 YouTubeID.create({
   team: 'celtics', 
-  gameLinks: [qTbZU0IUrQI, gN-TqmHx8E0, FIDrNbu0lYs]
+  gameLinks: [qTbZU0IUrQI, gNTqmHx8E0, FIDrNbu0lYs]
 })
 YouTubeID.create({
   team: 'warriors',
-  gameLinks: [Ho7r5n9Tflk, kBQnzLnh2Ac, 9OeHxYpRmAE]
+  gameLinks: [Ho7r5n9Tflk, kBQnzLnh2Ac]
 })
 
 // module.exports = {
